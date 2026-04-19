@@ -1,5 +1,8 @@
 package org.example.parking_lot_april2026.models;
 
+import org.example.parking_lot_april2026.strategies.SlotAssigningStrategy;
+import org.example.parking_lot_april2026.strategies.SlotAssignmentStrategyFactory;
+
 import java.util.List;
 
 public class ParkingLot extends BaseModel {
@@ -12,6 +15,8 @@ public class ParkingLot extends BaseModel {
     private ParkingLotStatus parkingLotStatus;
 
     private String address;
+
+   private SlotAssigningStrategy slotAssigningStrategy;
 
     private List<SupportedVehicleTypes> supportedVehicleTypes;
 
@@ -61,6 +66,17 @@ public class ParkingLot extends BaseModel {
 
     public void setSupportedVehicleTypes(List<SupportedVehicleTypes> supportedVehicleTypes) {
         this.supportedVehicleTypes = supportedVehicleTypes;
+    }
+
+    public SlotAssigningStrategy getSlotAssigningStrategy() {
+        return slotAssigningStrategy;
+    }
+
+    //This can be set by ADMIN for a particular day or week
+    //This will be applicable to all slots throughout day
+    public void setSlotAssigningStrategy(SlotAssigningStrategyType slotAssigningStrategyType) {
+        this.slotAssigningStrategy = SlotAssignmentStrategyFactory.
+                getSlotAssigningStrategyByType(slotAssigningStrategyType);
     }
 }
 

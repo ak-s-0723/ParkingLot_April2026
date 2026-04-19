@@ -8,6 +8,10 @@ public class Gate extends BaseModel {
     private GateStatus gateStatus;
     private Operator operator;
 
+    //We can add it for access pattern, no problem in that
+    private ParkingLot parkingLot;
+
+
     public GateType getGateType() {
         return gateType;
     }
@@ -38,5 +42,13 @@ public class Gate extends BaseModel {
 
     public void setOperator(Operator operator) {
         this.operator = operator;
+    }
+
+    public ParkingLot getParkingLot() {
+        return parkingLot;
+    }
+
+    public void setParkingLot(ParkingLot parkingLot) {
+        this.parkingLot = parkingLot;
     }
 }
