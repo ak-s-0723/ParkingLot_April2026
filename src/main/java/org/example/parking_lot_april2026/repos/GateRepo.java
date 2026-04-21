@@ -9,27 +9,10 @@ public class GateRepo {
     private Map<Long,Gate> gateMap = new TreeMap<>();
 
     public GateRepo() {
-        // create some demo gates and save in tree map
-        ParkingSlot parkingSlot = new ParkingSlot();
-        parkingSlot.setId(1L);
-        parkingSlot.setParkingSlotStatus(ParkingSlotStatus.EMPTY);
-        parkingSlot.setVehicleType(VehicleType.TWO_WHEELER);
-        List<ParkingSlot> parkingSlots = new ArrayList<>();
-        parkingSlots.add(parkingSlot);
-        ParkingLot parkingLot =  new ParkingLot();
-        parkingLot.setId(1L);
-        ParkingFloor parkingFloor = new ParkingFloor();
-        parkingFloor.setId(1L);
-        parkingFloor.setParkingSlots(parkingSlots);
-        List<ParkingFloor> parkingFloorList =new ArrayList<>();
-        parkingFloorList.add(parkingFloor);
-        parkingLot.setParkingFloors(parkingFloorList);
-        parkingLot.setSlotAssigningStrategy(SlotAssigningStrategyType.RANDOM);
         Gate gate = new Gate();
         gate.setId(1L);
-        gate.setParkingLot(parkingLot);
-        gate.setGateStatus(GateStatus.OPEN);
-        gate.setCreatedAt(new Date());
+        //gate.setGateStatus(GateStatus.OPEN);
+        //gate.setCreatedAt(new Date());
         gateMap.put(1L,gate);
     }
 
