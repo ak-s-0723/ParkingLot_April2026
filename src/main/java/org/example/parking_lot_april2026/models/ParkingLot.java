@@ -1,5 +1,8 @@
 package org.example.parking_lot_april2026.models;
 
+import org.example.parking_lot_april2026.strategies.RandomSlotAssigningStrategy;
+import org.example.parking_lot_april2026.strategies.SlotAssigingStrategy;
+
 import java.util.HashMap;
 import java.util.List;
 
@@ -10,6 +13,17 @@ public class ParkingLot extends BaseModel {
     private String address;
     private List<ParkingFloor> parkingFloors;
     private HashMap<VehicleType,Integer> allowedVehicleTypes;
+
+    public SlotAssigingStrategy getSlotAssigingStrategy() {
+        //ToDo : Implement factory of strategies and remove this hardcoding
+        return new RandomSlotAssigningStrategy();
+    }
+
+    public void setSlotAssigingStrategy(SlotAssigingStrategy slotAssigingStrategy) {
+        this.slotAssigingStrategy = slotAssigingStrategy;
+    }
+
+    private SlotAssigingStrategy slotAssigingStrategy;
 
     public List<Gate> getEntryGates() {
         return entryGates;

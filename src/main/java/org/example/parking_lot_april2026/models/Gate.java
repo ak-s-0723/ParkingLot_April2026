@@ -9,6 +9,16 @@ public class Gate extends BaseModel {
     private List<VehicleType> allowedVehicleTypes;
     private int gateNumber;
 
+    public ParkingLot getParkingLot() {
+        return parkingLot;
+    }
+
+    public void setParkingLot(ParkingLot parkingLot) {
+        this.parkingLot = parkingLot;
+    }
+
+    private ParkingLot parkingLot;
+
     public GateStatus getGateStatus() {
         return gateStatus;
     }

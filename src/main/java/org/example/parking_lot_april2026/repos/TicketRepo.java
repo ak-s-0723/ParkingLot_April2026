@@ -1,0 +1,17 @@
+package org.example.parking_lot_april2026.repos;
+
+import org.example.parking_lot_april2026.models.Ticket;
+
+import java.util.Map;
+import java.util.TreeMap;
+
+public class TicketRepo {
+    private Map<Long,Ticket> ticketMap = new TreeMap<>();
+
+    public TicketRepo() {
+    }
+
+    public Ticket save(Ticket ticket) {
+        return ticket;
+    }
+}
