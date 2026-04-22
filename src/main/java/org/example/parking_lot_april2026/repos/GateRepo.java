@@ -10,10 +10,17 @@ public class GateRepo {
     private Map<Long,Gate> gateMap = new TreeMap<>();
 
     public GateRepo() {
+        Gate gate = new Gate();
+        gate.setId(1L);
+        gateMap.put(1L,gate);
     }
 
     public Optional<Gate> findGateById(Long id) {
-        //return gateMap.get(id);
+        if(gateMap.containsKey(id)) {
+            Gate gate = gateMap.get(id);
+            return Optional.of(gate);
+        }
+
         return Optional.empty();
     }
 }

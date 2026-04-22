@@ -8,10 +8,15 @@ import java.util.TreeMap;
 public class TicketRepo {
     private Map<Long,Ticket> ticketMap = new TreeMap<>();
 
+    private static Long counter = 0L;
+
     public TicketRepo() {
     }
 
     public Ticket save(Ticket ticket) {
+        counter++;
+        ticket.setId(counter);
+        ticketMap.put(counter,ticket);
         return ticket;
     }
 }
